@@ -1,5 +1,8 @@
 .jumbotron {
   width: 100%;
+  height: 30vh;
+  min-height: 180px;
+  max-height: 180px;
   padding-left: 0;
   padding-right: 0;
   margin-left: 0;

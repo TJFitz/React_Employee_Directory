@@ -1,8 +1,10 @@
 .row {
   background-color: black;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-right: 5vw;
+  padding-left: 5vw;
   width: 95%;
   margin-top: 1vh;
-  height: 7vh;
+  min-height: 12vh;
+  color: aliceblue;
+  align-items: center;
 }

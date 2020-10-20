@@ -1,18 +1,10 @@
 import React from "react";
-import Jumbotron from "../Jumbotron/Jumbotron";
 import "./style.css";
-import Employee from "../Employee/Employee";
 
-function Wrapper() {
+export default function Wrapper(props) {
   return (
-    <div className=" text-center container bg-secondary wrapperWidth h-100 ">
-      <Jumbotron></Jumbotron>
-      <Employee></Employee>
-      <Employee></Employee>
-      <Employee></Employee>
-      <Employee></Employee>
+    <div className=" text-center bg-secondary wrapperWidth  ">
+      {props.children}
     </div>
   );
 }
-
-export default Wrapper;

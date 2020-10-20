@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import Fullpage from "./components/Fullpage/Fullpage";
+import Home from "./pages/Home";
+
 function App() {
-  return <Fullpage></Fullpage>;
+  return <Home></Home>;
 }
 
 export default App;

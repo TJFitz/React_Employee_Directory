@@ -1,8 +1,6 @@
 import React from "react";
 import "./style.css";
 
-function Jumbotron() {
-  return <div className="jumbotron bg-primary">Jumbo!</div>;
+export default function Jumbotron(props) {
+  return <div className="jumbotron bg-primary">{props.children}</div>;
 }
-
-export default Jumbotron;

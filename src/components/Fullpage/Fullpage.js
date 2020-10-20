@@ -1,12 +1,6 @@
 import React from "react";
-import Wrapper from "../Wrapper/Wrapper";
+import "./style.css";
 
-function Fullpage() {
-  return (
-    <div className="bg-dark container-fluid vh-100">
-      <Wrapper></Wrapper>
-    </div>
-  );
+export default function Fullpage(props) {
+  return <div className="bg-dark fullpageWidth">{props.children}</div>;
 }
-
-export default Fullpage;
