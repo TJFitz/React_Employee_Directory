@@ -17,5 +17,6 @@
   border: inset 1px rgba(14, 108, 185, 0.452);
   border-left: inset 1px rgb(0, 21, 80);
   box-shadow: 6px 2px 15px -3px rgba(10, 177, 255, 0.329),
-    -6px -5px 20px -5px rgba(6, 0, 63, 0.39);
+    -6px -5px 20px -5px rgba(6, 0, 63, 0.39),
+    inset -15px 15px 15px 5px rgba(0, 0, 0, 0.377);
 }
