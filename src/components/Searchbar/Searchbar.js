@@ -6,6 +6,7 @@ export default function Searchbar(props) {
     <div className="centerThis">
       <div className="mb-4 searchbar">
         <input
+          value={props.search}
           className="form-control"
           type="text"
           placeholder="Search"

@@ -11,28 +11,42 @@ export default class Home extends Component {
   state = {
     search: "",
     employees: [],
+    currentDisplay: [],
   };
 
   getEmployees = () => {
     API.getEmployees().then((results) => {
-      // console.log(results);
       let employeeArr = results.data.results.map((person) => {
         return {
-          name: person.name,
+          name: `${person.name.title} ${person.name.first} ${person.name.last}`,
           email: person.email,
           picture: person.picture.medium,
           phone: person.phone,
         };
       });
-      // console.log(employees);
       this.setState({
         employees: employeeArr,
+        currentDisplay: employeeArr,
       });
     });
   };
 
+  displayEmployees = () => {
+    let displayedEmployees = this.state.employees.filter((person) => {
+      for (const [key, value] of Object.entries(person)) {
+        if (value.includes(this.state.search)) {
+          return person;
+        }
+      }
+    });
+    return displayedEmployees;
+  };
+
   handleInputChange = (event) => {
-    this.setState({ search: event.target.value });
+    this.setState({
+      search: event.target.value,
+      currentDisplay: this.displayEmployees(),
+    });
   };
 
   componentDidMount() {
@@ -40,7 +54,6 @@ export default class Home extends Component {
   }
 
   render() {
-    console.log(this.state.employees);
     return (
       <Fullpage>
         <Wrapper>
@@ -48,23 +61,15 @@ export default class Home extends Component {
             <h1>Employee Directory</h1>
           </Jumbotron>
           <Searchbar handleInputChange={this.handleInputChange}></Searchbar>
-          {this.state.employees.map((employee) => {
+          {this.state.currentDisplay.map((employee) => {
             return (
-              <Employee key={employee.email}>
-                <div className="col-md-3 customFloat">
-                  <img src={employee.picture}></img>
-                </div>
-                <div className="col-md-2">
-                  <div>{employee.email}</div>
-                </div>
-                <div className="col-md-3"></div>
-                <div className="col-md-4">
-                  <div>{employee.phone}</div>
-                </div>{" "}
-                <div className="col-md-3">
-                  <div>{`${employee.name.title} ${employee.name.first} ${employee.name.last}`}</div>
-                </div>{" "}
-              </Employee>
+              <Employee
+                name={employee.name}
+                email={employee.email}
+                phone={employee.phone}
+                picture={employee.picture}
+                key={employee.email}
+              ></Employee>
             );
           })}
         </Wrapper>
@@ -72,9 +77,3 @@ export default class Home extends Component {
     );
   }
 }
-
-// <div>
-// <img src={employee.picture}></img>
-// </div>
-/* <div>{`${employee.name.title} ${employee.name.first} ${employee.name.last}`}</div> */
-/* <div>{employee.email}</div> */

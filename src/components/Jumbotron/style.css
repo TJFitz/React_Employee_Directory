@@ -1,4 +1,5 @@
 .jumbotron {
+  color: aliceblue;
   width: 100%;
   height: 30vh;
   min-height: 180px;
@@ -7,4 +8,18 @@
   padding-right: 0;
   margin-left: 0;
   margin-right: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(26, 26, 26) -30%,
+    rgb(0, 0, 0) 50%,
+    rgb(26, 26, 26) 130%
+  );
+  /* box-shadow: 2px 2px 15px 1px rgb(36, 65, 78); */
+
+  border-radius: 5px;
+  border: inset 1px rgba(17, 128, 218, 0.452);
+  border-left: inset 1px rgb(0, 21, 80);
+  border-right: inset 1px rgba(0, 87, 158, 0.267);
+  box-shadow: 6px 8px 20px -4px rgba(14, 155, 221, 0.226),
+    -5px -8px 10px -5px rgba(6, 0, 63, 0.39);
 }

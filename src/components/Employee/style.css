@@ -1,5 +1,11 @@
 .row {
-  background-color: black;
+  /* background-color: rgb(24, 24, 24); */
+  background: linear-gradient(
+    55deg,
+    rgba(0, 0, 0, 0.938) 0%,
+    rgba(37, 37, 37, 0.7) 59%,
+    rgba(97, 97, 97, 0.418) 100%
+  );
   padding-right: 5vw;
   padding-left: 5vw;
   width: 95%;
@@ -7,4 +13,9 @@
   min-height: 12vh;
   color: aliceblue;
   align-items: center;
+  border-radius: 5px;
+  border: inset 1px rgba(14, 108, 185, 0.452);
+  border-left: inset 1px rgb(0, 21, 80);
+  box-shadow: 6px 2px 15px -3px rgba(10, 177, 255, 0.329),
+    -6px -5px 20px -5px rgba(6, 0, 63, 0.39);
 }
