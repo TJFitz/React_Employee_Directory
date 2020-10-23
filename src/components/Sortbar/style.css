@@ -1,0 +1,18 @@
+.navsection {
+  margin-bottom: 2vh;
+  height: 3vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(10, 10, 10);
+}
+
+button {
+  text-shadow: 2px 2px 5px black;
+  color: aliceblue;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 34, 34);
+}

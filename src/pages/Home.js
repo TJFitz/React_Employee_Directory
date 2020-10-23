@@ -6,12 +6,14 @@ import Employee from "../components/Employee/Employee";
 import Fullpage from "../components/Fullpage/Fullpage";
 import API from "../utils/API";
 import Searchbar from "../components/Searchbar/Searchbar";
+import Sortbar from "../components/Sortbar/Sortbar";
 
 export default class Home extends Component {
   state = {
     search: "",
     employees: [],
     currentDisplay: [],
+    currentSort: 0,
   };
 
   getEmployees = () => {
@@ -49,6 +51,21 @@ export default class Home extends Component {
     });
   };
 
+  handleSort = (sortBy) => {
+    let sortedEmployees = this.state.employees.sort((a, b) => {
+      console.log(a);
+      console.log(b);
+      console.log(sortBy);
+      console.log(a.sortBy);
+      return a.sortBy - b.sortBy;
+    });
+    this.setState({
+      employees: sortedEmployees,
+      currentDisplay: this.displayEmployees(),
+    });
+    console.log(sortedEmployees);
+  };
+
   componentDidMount() {
     this.getEmployees();
   }
@@ -61,6 +78,7 @@ export default class Home extends Component {
             <h1>Employee Directory</h1>
           </Jumbotron>
           <Searchbar handleInputChange={this.handleInputChange}></Searchbar>
+          <Sortbar handleSort={this.handleSort}></Sortbar>
           {this.state.currentDisplay.map((employee) => {
             return (
               <Employee

@@ -1,6 +1,7 @@
 .wrapperWidth {
   width: 75%;
   height: 100%;
+  padding-bottom: 2vh;
   background-color: rgb(8, 8, 8);
   border-left: inset 2px rgb(0, 0, 0);
   border-right: inset 2px rgb(0, 0, 0);
