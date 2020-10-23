@@ -53,11 +53,15 @@ export default class Home extends Component {
 
   handleSort = (sortBy) => {
     let sortedEmployees = this.state.employees.sort((a, b) => {
-      console.log(a);
-      console.log(b);
-      console.log(sortBy);
+      console.log(a[sortBy]);
       console.log(a.sortBy);
-      return a.sortBy - b.sortBy;
+      if (a[sortBy] < b[sortBy]) {
+        return -1;
+      }
+      if (a[sortBy] > b[sortBy]) {
+        return 1;
+      }
+      return 0;
     });
     this.setState({
       employees: sortedEmployees,
