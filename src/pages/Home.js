@@ -53,8 +53,6 @@ export default class Home extends Component {
 
   handleSort = (sortBy) => {
     let sortedEmployees = this.state.employees.sort((a, b) => {
-      console.log(a[sortBy]);
-      console.log(a.sortBy);
       if (a[sortBy] < b[sortBy]) {
         return -1;
       }
@@ -63,11 +61,19 @@ export default class Home extends Component {
       }
       return 0;
     });
-    this.setState({
-      employees: sortedEmployees,
-      currentDisplay: this.displayEmployees(),
-    });
-    console.log(sortedEmployees);
+    if (this.state.currentSort === 1) {
+      this.setState({
+        employees: sortedEmployees,
+        currentDisplay: this.displayEmployees(),
+        currentSort: 0,
+      });
+    } else {
+      this.setState({
+        employees: sortedEmployees.reverse(),
+        currentDisplay: this.displayEmployees(),
+        currentSort: 1,
+      });
+    }
   };
 
   componentDidMount() {
