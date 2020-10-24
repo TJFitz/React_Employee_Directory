@@ -36,7 +36,7 @@ export default class Home extends Component {
   displayEmployees = () => {
     let displayedEmployees = this.state.employees.filter((person) => {
       for (const [key, value] of Object.entries(person)) {
-        if (value.includes(this.state.search)) {
+        if (value.toLowerCase().includes(this.state.search.toLowerCase())) {
           return person;
         }
       }
