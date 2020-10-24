@@ -20,7 +20,8 @@ export default class Home extends Component {
     API.getEmployees().then((results) => {
       let employeeArr = results.data.results.map((person) => {
         return {
-          name: `${person.name.title} ${person.name.first} ${person.name.last}`,
+          namePrefix: person.name.title,
+          name: `${person.name.first} ${person.name.last}`,
           email: person.email,
           picture: person.picture.medium,
           phone: person.phone,
@@ -92,6 +93,7 @@ export default class Home extends Component {
           {this.state.currentDisplay.map((employee) => {
             return (
               <Employee
+                title={employee.namePrefix}
                 name={employee.name}
                 email={employee.email}
                 phone={employee.phone}

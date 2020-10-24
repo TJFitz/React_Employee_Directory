@@ -15,7 +15,7 @@ export default function Employee(props) {
         <div>{props.phone}</div>
       </div>{" "}
       <div className="col-md-3">
-        <div>{`${props.name}`}</div>
+        <div>{`${props.title} ${props.name}`}</div>
       </div>{" "}
     </div>
   );
